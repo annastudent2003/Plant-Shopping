@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Urban Challenge</title>
+    <style>
+        body {
+            display: block;
+            background: linear-gradient(rgb(233, 253, 236), rgb(58, 201, 10), rgb(2, 65, 16));
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        
+        .vg, .lo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .vg p {
+            margin: 0 20px;
+        }
+        
+        .screw {
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        
+        h1 {
+            color: rgb(1, 25, 2);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 60px;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .content img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .fg, .tr {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: oblique;
+            color: green;
+            font-size: 16px;
+        }
+        
+        button {
+            font-size: 20px;
+            padding: 10px;
+            background-color: rgb(25, 42, 2);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #19fd69;
+            color: black;
+            transition: 0.5s;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+            .content {
+                flex-direction: column;
+            }
+            .lo {
+                flex-direction: column;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="lo">
+            <p><strong>Urban Garden🌱</strong></p>
+            <div class="vg">
+                <p>Home</p>
+                <p>Products</p>
+                <p>Customize</p>
+                <p><u>Search🔍</u></p>
+            </div>
+        </div>
+        
+        <div class="screw">
+            <div class="content">
+                <h1>Home is where <br> MY PLANTS are <br>
+                    <button>Explore More</button>
+                </h1>
+                <img src="https://img.freepik.com/premium-photo/realistic-stock-photos-hanging-plant-white-background-generative-ai_546189-2983.jpg" width="600px">
+            </div>
+            
+            <div class="content">
+                <img src="https://as2.ftcdn.net/v2/jpg/05/84/75/51/1000_F_584755191_xkXSIdQhzuwJ2fzEM6KZYdyk0YpZHVcb.jpg" width="500px">
+                <p class="fg">Decorate your home, office, and garden with fresh plants, herbs, and flowers.<br>
+                Bring fresh vibes and greenery to your life.<br><br>
+                <span class="tr">Plant is life, Plant is nature.<br>Let us enjoy the freshness and greenery of nature.</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function explore() {
+            let name = prompt("What is your full name?");
+            let cu = prompt("Do you want to buy or customize? (Press 1 for customize & 2 for buy)");
+            alert("Hi " + name + ", Happy shopping!!");
+
+            let h1 = document.querySelector("h1");
+            let p = document.querySelector(".fg");
+
+            if (cu == 1) {
+                h1.innerHTML = "Please wait, while we collect all our products for you to customize.";
+                p.innerHTML = "Please contact the store. Contact no: 00239293288889, Email: urbangarden@gmail.com";
+            } else {
+                h1.innerHTML = "Hope you like our products!! Please search for your desired plants on our website.";
+                p.innerHTML = "If you have any issues, contact our customer care service.";
+            }
+        }
+
+        document.querySelector("button").addEventListener("click", explore);
+    </script>
+  </body>
+</html>
+
